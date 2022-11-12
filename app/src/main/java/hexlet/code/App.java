@@ -23,7 +23,8 @@ class App implements Callable<String> {
 
     @Override
     public String call() throws Exception {
-        return Differ.generate(filepath1, filepath2);
+        System.out.println(Differ.generate(filepath1, filepath2));
+        return "0";
     }
     public static void main(String... args) {
         int exitCode = new CommandLine(new App()).execute(args);
