@@ -1,0 +1,25 @@
+name: my-check
+
+on: push
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macos-latest ]
+    steps:
+      - uses: action actions/checkout@v2
+      - name: setup JAVA JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Gradle Build Action
+        uses: gradle/gradle-build-action@v2.3.3
+        with:
+          gradle-version: 7.x
+          arguments: build
+          build-root-directory: app
+        
+          
