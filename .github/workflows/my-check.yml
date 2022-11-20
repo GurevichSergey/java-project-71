@@ -4,10 +4,8 @@ on: push
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ ubuntu-latest, macos-latest ]
+    runs-on: ubuntu-latest
+
     steps:
       - uses: action actions/checkout@v2
       - name: setup JAVA JDK 17
@@ -15,10 +13,9 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - name: Gradle Build Action
-        uses: gradle/gradle-build-action@v2.3.3
+      - name: Build with Gradle
+        uses: gradle/gradle-build-action@v2
         with:
-          gradle-version: 7.x
           arguments: build
           build-root-directory: app
       - name: Publish code coverage
