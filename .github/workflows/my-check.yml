@@ -21,12 +21,4 @@ jobs:
           gradle-version: 7.x
           arguments: build
           build-root-directory: app
-      - name: Publish code coverage
-        uses: paambaati/codeclimate-action@v3.0.0
-        env:
-          SECRET_CODE_CLIMATE: ${{secrets.SECRET_CODE_CLIMATE}}
-          JACOCO_SOURCE_PATH: app/src/main/java
-        with:
-          coverageCommand: make report
-          coverageLocations: ${{github.workspace}}/app/build/reports/jacoco/test/jacocoTestReport.xml:jacoco
-          
+
