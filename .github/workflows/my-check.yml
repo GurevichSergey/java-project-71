@@ -8,8 +8,9 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest, macos-latest ]
+
     steps:
-      - uses: action actions/checkout@v2
+      - uses: actions/checkout@v2
       - name: setup JAVA JDK 17
         uses: actions/setup-java@v3
         with:
@@ -18,15 +19,15 @@ jobs:
       - name: Gradle Build Action
         uses: gradle/gradle-build-action@v2.3.3
         with:
-          gradle-version: 7.x
+          gradle-version: 7.4.2
           arguments: build
           build-root-directory: app
       - name: Publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
-          CC_TEST_REPORTER_ID: ${{secrets.SECRET_CODE_CLIMATE}}
+          SECRET_CODE_CLIMATE: ${{secrets.SECRET_CODE_CLIMATE}}
           JACOCO_SOURCE_PATH: app/src/main/java
         with:
           coverageCommand: make report
-          coverageLocations: ${{github.workspace}}/app/build/reports/jacoco/test/jacocoTestReport.xml:jacoco
+          coverageLocations: ${{github.workspace}}/build/reports/jacoco/test/jacocoTestReport.xml:jacoco
           
