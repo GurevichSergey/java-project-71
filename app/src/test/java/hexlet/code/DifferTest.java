@@ -59,4 +59,14 @@ public class DifferTest {
         String expected = Files.readString(expectedPlain);
         assertEquals(expected, Differ.generate(pathYaml1, pathYaml2, "plain"));
     }
+    @Test
+    public void testErroneousFormat1() throws Exception {
+        String expected = Files.readString(expectedStylish);
+        assertEquals(expected, Differ.generate(pathJson1, pathJson2, "fson"));
+    }
+    @Test
+    public void testErroneousFormat2() throws Exception {
+        String expected = Files.readString(expectedStylish);
+        assertEquals(expected, Differ.generate(pathYaml1, pathYaml2, "yaml"));
+    }
 }
