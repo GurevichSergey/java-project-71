@@ -11,15 +11,15 @@ public class Stylish {
         var result = new StringBuilder("{\n");
         for (Map<String, Object> difference : differenceList) {
             switch (difference.get("status").toString()) {
-                case "unchanged" -> result.append("   ").append(difference.get("key")).append(": ")
+                case "unchanged" -> result.append("    ").append(difference.get("key")).append(": ")
                         .append(difference.get("value")).append("\n");
-                case "removed" -> result.append(" - ").append(difference.get("key")).append(": ")
+                case "removed" -> result.append("  - ").append(difference.get("key")).append(": ")
                         .append(difference.get("value")).append("\n");
-                case "added" -> result.append(" + ").append(difference.get("key")).append(": ")
+                case "added" -> result.append("  + ").append(difference.get("key")).append(": ")
                         .append(difference.get("value")).append("\n");
-                default -> result.append(" - ").append(difference.get("key")).append(": ")
+                default -> result.append("  - ").append(difference.get("key")).append(": ")
                         .append(difference.get("oldValue")).append("\n")
-                        .append(" + ").append(difference.get("key")).append(": ")
+                        .append("  + ").append(difference.get("key")).append(": ")
                         .append(difference.get("newValue")).append("\n");
             }
         }
