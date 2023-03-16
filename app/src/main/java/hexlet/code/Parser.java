@@ -18,7 +18,6 @@ public class Parser {
     }
     private static ObjectMapper getType(String filepath) {
         var fileType = filepath.substring(filepath.indexOf(".") + 1);
-        System.out.println(fileType);
         return "json".equals(fileType) ? new ObjectMapper() : new ObjectMapper(new YAMLFactory());
     }
 }
