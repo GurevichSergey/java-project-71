@@ -5,3 +5,5 @@
 <a href="https://codeclimate.com/github/GurevichSergey/java-project-71/test_coverage"><img src="https://api.codeclimate.com/v1/badges/057c885c0c6f0c6881cb/test_coverage" /></a>
 
 Small pet project that can compare flat json and yml files
+
+[![asciicast](https://asciinema.org/a/ETx95PcfSMc6N1W789WM5ZLdj.png)](https://asciinema.org/a/Uh3nblegaULFGz9KYBqFD37bn)
