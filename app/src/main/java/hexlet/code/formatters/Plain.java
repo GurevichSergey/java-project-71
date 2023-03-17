@@ -10,13 +10,24 @@ public class Plain {
         var result = new StringBuilder();
         for (Map<String, Object> difference : complexValue(differenceList)) {
             switch (difference.get("status").toString()) {
-                case "removed" -> result.append("Property '").append(difference.get("key"))
-                        .append("' was removed").append("\n");
-                case "added" -> result.append("Property '").append(difference.get("key"))
-                        .append("' was added with value: ").append(difference.get("value")).append("\n");
-                case "changed" -> result.append("Property '").append(difference.get("key"))
-                        .append("' was updated. From ").append(difference.get("oldValue"))
-                        .append(" to ").append(difference.get("newValue")).append("\n");
+                case "removed" -> result
+                        .append("Property '")
+                        .append(difference.get("key"))
+                        .append("' was removed")
+                        .append("\n");
+                case "added" -> result
+                        .append("Property '")
+                        .append(difference.get("key"))
+                        .append("' was added with value: ")
+                        .append(difference.get("value"))
+                        .append("\n");
+                case "changed" -> result
+                        .append("Property '")
+                        .append(difference.get("key"))
+                        .append("' was updated. From ")
+                        .append(difference.get("oldValue"))
+                        .append(" to ").append(difference.get("newValue"))
+                        .append("\n");
                 default -> {
                     break;
                 }
