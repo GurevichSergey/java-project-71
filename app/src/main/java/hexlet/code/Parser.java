@@ -7,10 +7,10 @@ import java.util.Map;
 
 public class Parser {
     public static Map<String, Object> parse(String data, String fileType) throws Exception {
-        ObjectMapper objectMapper = formatSelection(fileType);
+        ObjectMapper objectMapper = formatType(fileType);
         return objectMapper.readValue(data, new TypeReference<>() { });
     }
-    private static ObjectMapper formatSelection(String fileType) {
+    private static ObjectMapper formatType(String fileType) {
         return "json".equals(fileType) ? new ObjectMapper() : new ObjectMapper(new YAMLFactory());
     }
 }
