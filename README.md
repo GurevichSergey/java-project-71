@@ -12,4 +12,4 @@
 Генерация отчета в виде plain text, stylish и json
 Пример использования:
 
-[![asciicast](https://asciinema.org/a/1M7Y8Ynfh1xKBPy3R80O1Mwi5.png)](https://asciinema.org/a/1M7Y8Ynfh1xKBPy3R80O1Mwi5)
+[![asciicast](https://asciinema.org/a/v2E9k2RE2yo6WwzLdZ8O2zdHu.png)](https://asciinema.org/a/v2E9k2RE2yo6WwzLdZ8O2zdHu)
